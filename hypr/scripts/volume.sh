@@ -53,11 +53,21 @@ toggle_mute() {
 }
 
 increase() {
+	get_mute
+	if [ "$?" = 0 ]; then
+		wpctl set-mute @DEFAULT_AUDIO_SINK@ 0
+	fi
+
 	wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+
 	notify_volume
 }
 
 decrease() {
+	get_mute
+	if [ "$?" = 0 ]; then
+		wpctl set-mute @DEFAULT_AUDIO_SINK@ 0
+	fi
+
 	wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%-
 	notify_volume
 }
