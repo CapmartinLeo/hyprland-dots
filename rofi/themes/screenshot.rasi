@@ -1,0 +1,54 @@
+@theme "colors"
+
+* {
+    font: "JetBrainsMono Nerd Font 12";
+}
+
+window {
+    border-radius: 0.5em;
+    background-color: @surface;
+    padding: 0;
+    y-offset: -1em;
+    location: south;
+}
+
+mainbox {
+    border: 0;
+    padding: 0;
+    background-color: inherit;
+    orientation: horizontal;
+    children: [ listview ];
+}
+
+listview {
+    orientation: horizontal;
+    spacing: 1em;
+    lines: 1;
+    fixed-height: true;
+    fixed-columns: true;
+    background-color: inherit;
+    border: 0;
+    children: [ element ];
+}
+
+element {
+    border: 0.2em;
+    border-radius: 0.5em;
+    padding: 1em;
+    text-color: @on-surface;
+    background-color: @surface;
+    children: [ element-text ];
+    cursor: pointer;
+}
+
+element-text {
+    horizontal-align: 0.5;
+    background-color: inherit;
+    text-color: inherit;
+    cursor: inherit;
+}
+
+element.selected {
+    background-color: @primary;
+    text-color: @on-primary;
+}

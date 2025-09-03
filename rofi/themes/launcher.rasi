@@ -1,0 +1,192 @@
+@theme "colors"
+
+* {
+    font: "JetBrainsMono Nerd Font 12";
+}
+
+window {
+    border-radius: 1em;
+    border: 0.1em;
+    background-color: transparent;
+    border-color: @surface;
+    padding: 0;
+    width: 40em;
+    height: 20em;
+}
+
+mainbox {
+    border: 0;
+    padding: 0;
+    spacing: 0;
+    background-image: @wallpaper;
+    orientation: horizontal;
+    children: [ leftcontainer, listview ];
+}
+
+leftcontainer {
+    border: 0;
+    padding: 0.5em;
+    background-color: transparent;
+    orientation: vertical;
+    children: [ inputbar ];
+}
+
+inputbar {
+    padding: 0.5em;
+    border: 2;
+    border-color: @primary-container;
+    border-radius: 0.5em;
+    background-color: @primary;
+    children: [ textbox-prompt-colon, entry, case-indicator ];
+}
+
+textbox-prompt-colon, entry, case-indicator {
+    background-color: inherit;
+    text-color: @on-primary;
+}
+
+textbox-prompt-colon {
+    expand: false;
+    str: " ";
+    margin: 0px 0.3em 0em 0em;
+}
+
+listview {
+    border: 0;
+    padding: 0.5em;
+    // background-color: transparent;
+    background-color: @surface;
+    columns: 1;
+    lines: 8;
+    children: [ element, scrollbar ];
+}
+
+element {
+    border: 0;
+    border-radius: 0.5em;
+    padding: 0.1em;
+    background-color: inherit;
+    text-color: @on-surface;
+}
+
+element-text, element-icon {
+    background-color: inherit;
+    text-color:       inherit;
+}
+
+element-icon {
+    size: 2em;
+}
+
+element-text {
+    padding: 0 0 0 0.5em;
+    vertical-align: 0.5;
+}
+
+element.selected {
+    background-color: @primary;
+    text-color: @on-primary;
+}
+
+@media (enabled: env(ONLY_LIST, false)) {
+		mainbox {
+				children: [ listview ];
+		}
+}
+
+// message {
+//     border: 2px 0px 0px;
+//     border-color: @outline-variant;
+//     padding: 1px;
+// }
+//
+// textbox {
+//     text-color: @on-surface;
+// }
+//
+// element.normal.normal {
+//     background-color: @surface-container;
+//     text-color: @on-surface;
+// }
+//
+// element.normal.urgent {
+//     background-color: @error-container;
+//     text-color: @on-error-container;
+// }
+//
+// element.normal.active {
+//     background-color: @primary-container;
+//     text-color: @on-primary-container;
+// }
+//
+// element.selected.normal {
+//     background-color: @surface-container-high;
+//     text-color: @on-surface;
+// }
+//
+// element.selected.urgent {
+//     background-color: @error;
+//     text-color: @on-error;
+// }
+//
+// element.selected.active {
+//     background-color: @primary;
+//     text-color: @on-primary;
+// }
+//
+// element.alternate.normal {
+//     background-color: @surface-container-low;
+//     text-color: @on-surface-variant;
+// }
+//
+// element.alternate.urgent {
+//     background-color: @error-container;
+//     text-color: @on-error-container;
+// }
+//
+// element.alternate.active {
+//     background-color: @secondary-container;
+//     text-color: @on-secondary-container;
+// }
+//
+// scrollbar {
+//     width: 4px;
+//     border: 0;
+//     handle-width: 8px;
+//     padding: 0;
+// }
+//
+// sidebar {
+//     border: 2px 0px 0px;
+//     border-color: @outline;
+// }
+//
+// button {
+//     text-color: @on-surface;
+// }
+//
+// button.selected {
+//     background-color: @surface-container-highest;
+//     text-color: @on-surface;
+// }
+//
+// inputbar {
+//     spacing: 0;
+//     text-color: @on-surface;
+//     padding: 1px;
+// }
+//
+// case-indicator {
+//     spacing: 0;
+//     text-color: @on-surface;
+// }
+//
+// entry {
+//     spacing: 0;
+//     text-color: @on-surface;
+// }
+//
+// prompt {
+//     spacing: 0;
+//     text-color: @on-surface;
+// }

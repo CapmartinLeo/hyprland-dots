@@ -1,0 +1,5 @@
+@theme "screenshot"
+
+listview {
+    columns: 3;
+}

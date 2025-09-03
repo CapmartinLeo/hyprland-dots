@@ -21,4 +21,33 @@ link_dotfiles() {
 	done
 }
 
+install_wallpapers() {
+	if [ ! -d ~/.wallpapers ]; then
+		echo "Creating wallpapers directory"
+		mkdir ~/.wallpapers
+	fi
+
+	if [ ! -d ~/.wallpapers/Wallpapers ]; then
+		echo "Downloading wallpapers"
+		git clone git@github.com:CapmartinLeo/wallpapers.git ~/.wallpapers/Wallpapers
+	fi
+}
+
+install_nvim_config() {
+	if [ ! -d ./nvim ]; then
+		echo "Creating nvim config directory"
+		mkdir ./nvim
+		echo "Downloading nvim config"
+		git clone git@github.com:CapmartinLeo/nvim_config.git ./nvim
+	fi
+}
+
+install_hyprland_plugins() {
+	
+}
+
+install_nvim_config
+
+install_wallpapers
+
 link_dotfiles

@@ -1,0 +1,36 @@
+- wallpaper + matugen 
+    - [x] waypaper
+    - [x] keybindings
+    - [x] matugen
+        - [ ] fix gtk theming
+- rofi
+    - [x] install rofi
+    - [x] theming
+        - [x] colors
+        - [x] icons (Papirus)
+        - [x] layout
+    - [x] power menu
+- lock screen
+    - [x] setup hyprlock
+    - [x] customize hyprlock
+        - [x] background
+        - [x] blur
+        - [x] layout
+- screenshot tool
+    - [x] install hyprshot
+    - [x] rofi menu
+- customize hyprpanel
+    - [x] figure out colors with matugen
+    - [/] useless modules
+    - [x] mess around with sizing
+- [x] sddm (probqbly sugar candy)
+- customize zen-browser
+- misc
+    - keyboard shortcuts
+    - finsih install script
+    - custom cursor
+    - emoji keyboard
+        - [x] install emoji font
+        - [ ] install emoji picker
+    - clipboard manager
+    - fine tune kitty config
