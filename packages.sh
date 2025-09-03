@@ -2,6 +2,7 @@
 
 PACKAGES=(
 	# System Utilities
+	fish
 	tree
 	fzf
 	unzip
@@ -16,6 +17,9 @@ PACKAGES=(
 	qt5-graphicaleffects
 	qt5‑quickcontrols2
 	qt5‑svg
+	man-db
+	man-pages
+	tldr
 
 	# Development Tools
 	git
@@ -43,6 +47,7 @@ PACKAGES=(
 	hypridle
 	hyprlock
 	hyprshot
+	wf-recorder
 	matugen-bin
 	cliphist
 
@@ -63,6 +68,12 @@ PACKAGES=(
 	gnome-calculator
 	baobab
 	nautilus
+
+	# Other apps
+	zen-browser
+	vesktop
+	onlyoffice-bin
+	libreoffice-fresh
 )
 
 PACKAGES_TO_INSTALL=""
