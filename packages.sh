@@ -70,7 +70,7 @@ PACKAGES=(
 	nautilus
 
 	# Other apps
-	zen-browser
+	zen-browser-bin
 	vesktop
 	onlyoffice-bin
 	libreoffice-fresh
