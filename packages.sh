@@ -38,6 +38,7 @@ PACKAGES=(
 
 	# Wayland/Desktop Environment
 	xdg-desktop-portal-gtk
+	hyprpolkitagent
 	ags-hyprpanel-git
 	waypaper
 	rofi-wayland
