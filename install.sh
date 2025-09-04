@@ -29,7 +29,7 @@ install_wallpapers() {
 
 	if [ ! -d ~/.wallpapers/Wallpapers ]; then
 		echo "Downloading wallpapers"
-		git clone git@github.com:CapmartinLeo/wallpapers.git ~/.wallpapers/Wallpapers
+		git clone https://github.com/CapmartinLeo/wallpapers.git ~/.wallpapers/Wallpapers
 	fi
 }
 
@@ -38,13 +38,13 @@ install_nvim_config() {
 		echo "Creating nvim config directory"
 		mkdir ./nvim
 		echo "Downloading nvim config"
-		git clone git@github.com:CapmartinLeo/nvim_config.git ./nvim
+		git clone https://github.com/CapmartinLeo/nvim_config.git ./nvim
 	fi
 }
 
-install_hyprland_plugins() {
-	
-}
+# install_hyprland_plugins() {
+# 	
+# }
 
 install_nvim_config
 
