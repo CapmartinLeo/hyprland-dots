@@ -1,8 +1,8 @@
 #!/bin/sh
 
 lock=" Lock"
-exit=" Exit"
-reboot="勒 Reboot"
+exit="󰈆 Exit"
+reboot="󰑓 Reboot"
 shutdown=" Shutdown"
 suspend="󰏦 Suspend"
 
