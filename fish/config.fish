@@ -25,13 +25,11 @@ if status is-interactive
     alias gp "git push"
     alias lg "lazygit"
 
-    # remove branches that have been removed from remote
-    alias gitremoveoldbranches "git branch -vv | awk '/: gone]/ && !/^\*/ {print $1}' | xargs git branch -d" 
-
     # command rebinds
     alias vim nvim
     alias cat "bat -Pp"
     alias man batman
+    alias k kubectl
 
     # config shortcuts
     alias fishconfig "nvim ~/.config/fish/config.fish"
