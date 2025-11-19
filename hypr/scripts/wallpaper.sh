@@ -12,5 +12,6 @@ while [ "$code" -ne 0 ]; do
 done
 
 ln -sf ~/.cache/matugen/colors.rasi ~/.config/rofi/themes/colors.rasi
+ln -sf ~/.cache/matugen/Colors.qml ~/.config/quickshell/Style/Colors.qml
 
 notify-send -i "$wallpaper" "colors updated" 
