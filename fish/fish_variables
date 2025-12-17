@@ -44,3 +44,4 @@ SETUVAR fish_pager_color_selected_completion:\x1d
 SETUVAR fish_pager_color_selected_description:\x1d
 SETUVAR fish_pager_color_selected_prefix:\x1d
 SETUVAR fish_user_paths:/home/lucie/\x2elocal/bin
+SETUVAR fish_user_paths:/home/leo/\x2elocal/share/JetBrains/Toolbox/scripts\x1e/home/leo/\x2elocal/bin

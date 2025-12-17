@@ -3,13 +3,15 @@ import QtQuick
 
 Rectangle {
   id: widgetWrapper
-  required default property Item child
+  required default property Item child;
 
   radius: Theme.defalutRadius
 
   color: Colors.surface_container
 
   anchors {
+    top: parent.top + Theme.defaultMargin
+    bottom: parent.bottom + Theme.defaultMargin
     leftMargin: Theme.defaultMargin
     rightMargin: Theme.defaultMargin
   }
@@ -22,6 +24,6 @@ Rectangle {
   }
 
   children: [
-    widgetWrapper.child 
+    widgetWrapper.child
   ]
 }

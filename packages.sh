@@ -39,7 +39,8 @@ PACKAGES=(
 	# Wayland/Desktop Environment
 	xdg-desktop-portal-gtk
 	hyprpolkitagent
-	ags-hyprpanel-git
+	ags-hyprpanel-git # to replace with vanilla ags
+	aylurs-gtk-shell-git
 	waypaper
 	rofi-wayland
 	rofi-calc

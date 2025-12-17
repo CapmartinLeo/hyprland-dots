@@ -11,6 +11,9 @@ Scope {
 		model: Quickshell.screens
 
 		PanelWindow {
+			id: bar
+			required property var modelData
+			screen: modelData
 
 			anchors {
 				top: true
@@ -18,10 +21,12 @@ Scope {
 				right: true
 			}
 
-			implicitHeight: 30
 			color: "#000000"
 
+			implicitHeight: 30
+
 			Rectangle {
+				id: rectangle
 				anchors {
 					left: parent.left
 					right: parent.right
@@ -37,6 +42,7 @@ Scope {
 						left: parent.left
 						verticalCenter: parent.verticalCenter
 					}
+					screen: bar.screen
 					color: Colors.primary
 				}
 
