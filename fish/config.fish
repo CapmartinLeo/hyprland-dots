@@ -1,16 +1,16 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
-    fish_add_path /home/leo/.local/bin/
-    fish_add_path /home/leo/.local/bin/flutter/bin
-    fish_add_path /home/leo/.deno/bin/
-    fish_add_path /home/leo/.local/share/JetBrains/Toolbox/scripts
+    fish_add_path /home/lucie/.local/bin/
+    fish_add_path /home/lucie/.local/bin/flutter/bin
+    fish_add_path /home/lucie/.deno/bin/
+    fish_add_path /home/lucie/.local/share/JetBrains/Toolbox/scripts
 
     # dotnet
-    fish_add_path /home/leo/.dotnet/tools
+    fish_add_path /home/lucie/.dotnet/tools
     fish_add_path /root/.dotnet/tools
 
     # pyenv
-    fish_add_path /home/leo/.pyenv/bin
+    fish_add_path /home/lucie/.pyenv/bin
     pyenv init - | source
 
 
