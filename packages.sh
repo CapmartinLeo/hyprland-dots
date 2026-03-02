@@ -52,6 +52,7 @@ PACKAGES=(
 	wf-recorder
 	matugen-bin
 	cliphist
+	capitaine-cursors
 
 	# hyprland plugins
 	cpio
