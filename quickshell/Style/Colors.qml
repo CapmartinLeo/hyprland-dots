@@ -1,1 +1,1 @@
-/home/leo/.cache/matugen/Colors.qml
+/home/lucie/.cache/matugen/Colors.qml

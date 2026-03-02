@@ -9,7 +9,7 @@ Singleton {
 
 	function getMonitorWorkspaces(screen) {
 		const monitor = Hyprland.monitorFor(screen)
-		let workspaces = Hyprland.workspaces.values.filter(ws => ws.monitor.id === monitor.id);
+		let workspaces = Hyprland.workspaces.values.filter(ws => ws.monitor?.id === monitor?.id);
 		return workspaces;
 	}
 }

@@ -1,4 +1,4 @@
-import "../../Style"
+import "../../Components"
 
 WidgetWrapper {
 	FontText {

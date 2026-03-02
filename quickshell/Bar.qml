@@ -3,8 +3,7 @@ import Quickshell.Io
 import QtQuick
 
 import "Style/"
-import "Widgets/Clock"
-import "Widgets/Workspaces"
+import "Modules/"
 
 Scope {
 	Variants {
@@ -21,40 +20,39 @@ Scope {
 				right: true
 			}
 
-			color: "#000000"
+			color: "transparent"
 
-			implicitHeight: 30
+			implicitHeight: bar_content.implicitHeight + Theme.defaultMargin * 2
 
 			Rectangle {
-				id: rectangle
+				id: bar_content
+
 				anchors {
-					left: parent.left
-					right: parent.right
-					top: parent.top
-					bottom: parent.bottom
-					leftMargin: 8
-					rightMargin: 8
-				}
-				color: "#000000"
-
-				Workspaces {
-					anchors {
-						left: parent.left
-						verticalCenter: parent.verticalCenter
-					}
-					screen: bar.screen
-					color: Colors.primary
+					fill: parent
+					topMargin: Theme.defaultMargin
+					bottomMargin: Theme.defaultMargin
+					leftMargin: Theme.defaultMargin
+					rightMargin: Theme.defaultMargin
 				}
 
-				ClockWidget {
-					anchors {
-						right: parent.right
-						verticalCenter: parent.verticalCenter
-					}
-					color: Colors.primary
+				implicitHeight: Math.max(left.implicitHeight, center.implicitHeight, right.implicitHeight)
+				color: "transparent"
+
+				LeftModule {
+					id: left
+					bar: bar
+				}
+
+				CenterModule {
+					id: center
+					bar: bar
+				}
+
+				RightModule {
+					id: right
+					bar: bar
 				}
 			}
 		}
 	}
 }
-

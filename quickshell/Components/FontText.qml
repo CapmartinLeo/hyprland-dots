@@ -1,9 +1,12 @@
 import QtQuick
+import "../Style"
 
 Text {
 	font {
-		pixelSize: 12
+		pointSize: Theme.defaultFontSize
 		family: "JetBrainsMono Nerd Font"
 		weight: 600
 	}
+
+	color: Theme.mainText
 }
