@@ -1,1 +1,0 @@
-/home/lucie/.cache/matugen/Colors.qml
