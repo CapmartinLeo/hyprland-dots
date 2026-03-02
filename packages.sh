@@ -70,6 +70,7 @@ PACKAGES=(
 	gnome-calculator
 	baobab
 	nautilus
+	webapp-manager
 
 	# Other apps
 	zen-browser-bin
