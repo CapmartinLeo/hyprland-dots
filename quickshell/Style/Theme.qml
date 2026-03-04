@@ -36,4 +36,12 @@ Singleton {
   readonly property int sliderHandleRadius: 5
   readonly property int sliderHeight: 4
   readonly property int sliderRadius: 2
+
+
+  // contextMenu
+  readonly property color menuSeparator: Colors.outline
+  readonly property color menuItemHover: Colors.outline
+  readonly property int menuItemMargin: 4
+  readonly property int menuSeparatorHeight: 11
+  
 }

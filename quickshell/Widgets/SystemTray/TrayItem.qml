@@ -26,7 +26,9 @@ ColumnLayout {
 		color: "transparent"
 		Layout.fillWidth: true
 		Layout.minimumWidth: rowLayout.implicitWidth
-		Layout.preferredHeight: rowLayout.implicitHeight
+		Layout.preferredHeight: rowLayout.implicitHeight + Theme.menuItemMargin * 2
+
+		radius: 2
 
 		MouseArea {
 			id: mouseArea
@@ -43,13 +45,19 @@ ColumnLayout {
 				}
 			}
 
-			onEntered: parent.color = "blue"
+			onEntered: parent.color = Theme.menuItemHover
 			onExited: parent.color = "transparent"
 		}
 
+
 		RowLayout {
 			id: rowLayout
+
 			anchors.fill: parent
+			anchors.verticalCenter: parent.verticalCenter
+			anchors.leftMargin: Theme.menuItemMargin
+			anchors.rightMargin: Theme.menuItemMargin
+
 			spacing: Theme.itemSpacing
 
 			IconImage {

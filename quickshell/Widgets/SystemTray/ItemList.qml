@@ -5,6 +5,8 @@ import QtQuick.Layouts
 
 import Quickshell
 
+import "../../Style"
+
 ColumnLayout {
 	id: root
 	spacing: 0
@@ -26,10 +28,11 @@ ColumnLayout {
 		Item {
 			id: item
 			required property QsMenuEntry modelData
+			property bool isSeparator: modelData.isSeparator
 
 			Layout.fillWidth: true
-			Layout.minimumWidth: trayItem.implicitWidth
-			Layout.preferredHeight: trayItem.implicitHeight
+			Layout.minimumWidth: isSeparator ? 0 : trayItem.implicitWidth
+			Layout.preferredHeight: isSeparator ? Theme.menuSeparatorHeight :  trayItem.implicitHeight
 
 			readonly property Item separator: Rectangle {
 				anchors.left: parent?.left
@@ -37,7 +40,7 @@ ColumnLayout {
 				anchors.verticalCenter: parent?.verticalCenter
 
 				implicitHeight: 1
-				color: "red"
+				color: Theme.menuSeparator
 			}
 
 			readonly property Item trayItem: TrayItem {
@@ -49,7 +52,7 @@ ColumnLayout {
 
 			}
 
-			children: modelData.isSeparator ? [separator] : [trayItem]
+			children: isSeparator ? [separator] : [trayItem]
 		}
 
 	}
