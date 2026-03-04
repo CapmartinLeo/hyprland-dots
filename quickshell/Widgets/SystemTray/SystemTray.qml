@@ -17,7 +17,7 @@ WidgetWrapper {
 	visible: SystemTray.items.values.length > 0
 
 	RowLayout {
-		spacing: Theme.defaultSpacing
+		spacing: Theme.itemSpacing
 		Repeater {
 			model: SystemTray.items
 

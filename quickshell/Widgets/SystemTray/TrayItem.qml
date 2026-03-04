@@ -50,7 +50,7 @@ ColumnLayout {
 		RowLayout {
 			id: rowLayout
 			anchors.fill: parent
-			spacing: Theme.defaultSpacing
+			spacing: Theme.itemSpacing
 
 			IconImage {
 				source: root.trayItem.icon

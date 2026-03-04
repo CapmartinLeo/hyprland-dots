@@ -25,7 +25,7 @@ PopupPanelWindow {
 						font.pointSize: Theme.smallFontSize
 					}
 					RowLayout {
-						spacing: Theme.defaultSpacing
+						spacing: Theme.itemSpacing
 						Layout.preferredWidth: playback.implicitWidth
 
 						ClippingWrapperRectangle {

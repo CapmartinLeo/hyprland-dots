@@ -14,14 +14,10 @@ RowLayout {
 
 	anchors.verticalCenter: parent.verticalCenter
 	anchors.right: parent.right
-	spacing: Theme.defaultSpacing
+	spacing: Theme.barSpacing
 
 	SystemTray {
 		screen: root.screen
 	}
 	Clock {}
-
-	// Media {
-	// 	screen: root.screen
-	// }
 }

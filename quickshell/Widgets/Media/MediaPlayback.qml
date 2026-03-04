@@ -1,6 +1,5 @@
 import QtQuick
 import QtQuick.Layouts
-import QtQuick.Controls
 
 import Quickshell.Services.Mpris
 
@@ -15,7 +14,7 @@ RowLayout {
 	required property MprisPlayer player
 
 
-	spacing: Theme.defaultSpacing
+	spacing: Theme.itemSpacing
 
 	FrameAnimation {
 		// only emit the signal when the position is actually changing.

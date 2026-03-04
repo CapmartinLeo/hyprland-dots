@@ -13,7 +13,7 @@ WidgetWrapper {
 	required property ShellScreen screen;
 
 	RowLayout {
-		spacing: Theme.defaultSpacing
+		spacing: Theme.itemSpacing
 
 		Repeater {
 			model: WorkspaceWrapper.getMonitorWorkspaces(root.screen)

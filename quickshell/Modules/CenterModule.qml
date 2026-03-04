@@ -12,7 +12,7 @@ RowLayout {
 
 	anchors.verticalCenter: parent.verticalCenter
 	anchors.horizontalCenter: parent.horizontalCenter
-	spacing: Theme.defaultSpacing
+	spacing: Theme.barSpacing
 
 	Media {
 		screen: root.screen

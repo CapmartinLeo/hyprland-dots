@@ -8,7 +8,8 @@ Singleton {
   readonly property double defaultFontSize: 9.6
   readonly property double smallFontSize: 8
   readonly property double bigFontSize: 11
-  readonly property int defaultSpacing: 10
+  readonly property int barSpacing: 10
+  readonly property int itemSpacing: 5
   readonly property int defaultMargin: 5
   readonly property int defalutRadius: 4
 

@@ -14,7 +14,7 @@ RowLayout {
 
 	anchors.left: parent.left
 	anchors.verticalCenter: parent.verticalCenter
-	spacing: Theme.defaultSpacing
+	spacing: Theme.barSpacing
 
 	Workspaces { screen: root.screen }
 
