@@ -14,6 +14,8 @@ WidgetWrapper {
 	id: root
 	required property ShellScreen screen
 
+	visible: SystemTray.items.values.length > 0
+
 	RowLayout {
 		spacing: Theme.defaultSpacing
 		Repeater {

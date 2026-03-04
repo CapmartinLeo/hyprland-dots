@@ -1,5 +1,3 @@
-pragma ComponentBehavior: Bound
-
 import QtQuick
 import QtQuick.Layouts
 
@@ -10,51 +8,49 @@ import "../../Components"
 import "../../Style"
 
 
-Rectangle {
+ColumnLayout {
 	id: root
 
 	required property QsMenuEntry trayItem
-	required property double maxWidth
-	required property PopupPanelWindow window
 
 	property bool subMenuOpened: false
+	property bool subMenuLoaded: false
 
-	color: "transparent"
-	implicitWidth: itemContent.implicitWidth
-	implicitHeight: itemContent.implicitHeight
+	signal menuShouldClose();
 
-	MouseArea {
-		id: mouseArea
-		anchors.fill: parent
-		hoverEnabled: true
+	anchors.fill: parent
 
-		onClicked: {
-			if (root.trayItem.hasChildren) {
-				root.subMenuOpened = !root.subMenuOpened
+	spacing: 0
 
-			} else {
-				root.trayItem.triggered()
-				root.window.active = false
+	Rectangle {
+		color: "transparent"
+		Layout.fillWidth: true
+		Layout.minimumWidth: rowLayout.implicitWidth
+		Layout.preferredHeight: rowLayout.implicitHeight
+
+		MouseArea {
+			id: mouseArea
+			anchors.fill: parent
+			hoverEnabled: true
+
+			onClicked: {
+				if (root.trayItem.hasChildren) {
+					root.subMenuOpened = !root.subMenuOpened
+
+				} else {
+					root.trayItem.triggered()
+					root.menuShouldClose()
+				}
 			}
+
+			onEntered: parent.color = "blue"
+			onExited: parent.color = "transparent"
 		}
 
-		onEntered: parent.color = "blue"
-		onExited: parent.color = "transparent"
-
-	}
-
-	QsMenuOpener {
-		id: subMenuItems
-
-		menu: root.trayItem.hasChildren ? root.trayItem : null
-	}
-
-	ColumnLayout {
-		id: itemContent
-		spacing: 0
 		RowLayout {
+			id: rowLayout
+			anchors.fill: parent
 			spacing: Theme.defaultSpacing
-			implicitWidth: root.maxWidth > implicitWidth ? root.maxWidth : implicitWidth
 
 			IconImage {
 				source: root.trayItem.icon
@@ -64,52 +60,42 @@ Rectangle {
 			FontText {
 				Layout.fillWidth: true
 				id: text
-				text: root.trayItem.text
+				text: root.trayItem?.text || ""
 			}
 
 			FontText {
-				text: root.trayItem.hasChildren ? "" : " "
+				property string endIcon: root.trayItem.hasChildren
+				? (root.subMenuOpened ? "" : "")
+				: " "
+				text: endIcon
+
 			}
 		}
-
-		Rectangle {
-			id: subMenu
-			color: "green"
-			Layout.fillWidth: true
-
-			states: State {
-				name: "opened"
-				when: root.subMenuOpened
-				PropertyChanges {
-					target: subMenu
-					implicitHeight: 30
-				}
-			}
-
-			transitions: Transition {
-
-				NumberAnimation {
-					duration: 100
-					properties: "implicitHeight"
-					easing.type: Easing.InOutQuad
-				}
-			}
-
-
-			ColumnLayout {
-				Repeater {
-					model: subMenuItems
-
-					// TrayItem {
-					// 	required property QsMenuEntry modelData
-					// 	trayItem: modelData
-					// 	maxWidth: root.maxWidth
-					// 	window: root.window
-					// }
-				}
-			}
-		}
-
 	}
 
-} 
+	Item {
+		id: subMenu
+		implicitWidth: subMenuLoader.implicitWidth
+		clip: true
+
+		Layout.preferredHeight: root.subMenuOpened && subMenuLoader.item
+		? subMenuLoader.item.implicitHeight
+		: 0
+
+		Behavior on Layout.preferredHeight {
+			NumberAnimation {
+				duration: 100
+				easing.type: Easing.InOutQuad
+			}
+		}
+
+		Loader {
+			id: subMenuLoader
+			active: root.trayItem.hasChildren && root.subMenuOpened
+			source: "ItemList.qml"
+			onLoaded: {
+				item.menu = root.trayItem
+			}
+		}
+	}
+}
