@@ -42,11 +42,11 @@ PopupPanelWindow {
 							}
 						}
 
-						ClippingRectangle {
+						Item {
 							Layout.alignment: Qt.AlignLeft
 							Layout.fillWidth: true
 							Layout.fillHeight: true
-							color: "transparent"
+							clip: true
 
 							ColumnLayout {
 								FontText {
