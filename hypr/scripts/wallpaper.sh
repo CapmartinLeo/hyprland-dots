@@ -2,15 +2,7 @@
 
 wallpaper="$1"
 
-hyprpanel sw "$wallpaper"
-code="$?"
-
-while [ "$code" -ne 0 ]; do
-	sleep 0.5
-	matugen image "$wallpaper"
-	# hyprpanel sw "$wallpaper" 2> /tmp/hyprpanel.log
-	code="$?"
-done
+matugen image "$wallpaper"
 
 ln -sf ~/.cache/matugen/theme.conf ~/.config/hypr/config/theme.conf
 ln -sf ~/.cache/matugen/colors.rasi ~/.config/rofi/themes/colors.rasi
