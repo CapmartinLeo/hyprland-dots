@@ -37,10 +37,21 @@ WidgetWrapper {
 
 				MouseArea {
 					anchors.fill: parent
-					acceptedButtons: Qt.RightButton
-					onClicked: {
-						if (parent.modelData.hasMenu) {
+					acceptedButtons: Qt.RightButton | Qt.LeftButton | Qt.MiddleButton
+					onClicked: (mouse) => {
+						const button = mouse.button
+						const itemData = item.modelData
+
+						if (button == Qt.RightButton && itemData.hasMenu) {
+							// hack to refresh list when opening tray
+							menu.handle = null
+							menu.handle = itemData.menu
+
 							menu.active = true
+						} else if (button == Qt.LeftButton && !itemData.onlyMenu) {
+							itemData.activate()
+						} else if (button == Qt.LeftButton) {
+							itemData.secondaryActivate()
 						}
 					}
 				}
