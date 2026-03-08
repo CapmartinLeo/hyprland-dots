@@ -3,8 +3,9 @@ import Quickshell
 
 import "../Style"
 
-import "../Widgets/Clock"
 import "../Widgets/SystemTray"
+import "../Widgets/KBLayout"
+import "../Widgets/Clock"
 
 RowLayout {
 	id: root
@@ -19,6 +20,7 @@ RowLayout {
 	SystemTray {
 		screen: root.screen
 	}
+	KBLayout {}
 	Clock {
 		screen: root.screen
 	}
