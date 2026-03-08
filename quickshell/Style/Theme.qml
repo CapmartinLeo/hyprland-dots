@@ -14,19 +14,20 @@ Singleton {
   readonly property int defalutRadius: 4
 
   
-  readonly property color widgetBackground: Colors.primary_container
+  readonly property color widgetBackground: Colors.surface_container_high
   readonly property color windowBackground: Colors.surface
-  readonly property color windowBorder: Colors.surface_container
-  readonly property color mainText: Colors.on_primary_container
-  readonly property color secondaryText: Colors.primary
+  readonly property color windowBorder: Colors.surface_container_high
+  readonly property color mainText: Colors.primary
+  readonly property color secondaryText: Colors.secondary
+  readonly property color highlightText: Colors.tertiary
 
   // buttons
-  readonly property color buttonColor: Colors.secondary
-  readonly property color buttonTextColor: Colors.on_secondary
-  readonly property color buttonHoveredColor: Colors.secondary_fixed
-  readonly property color buttonHoveredTextColor: Colors.on_secondary_fixed
+  readonly property color buttonColor: Colors.tertiary
+  readonly property color buttonTextColor: Colors.on_tertiary
+  readonly property color buttonHoveredColor: Colors.tertiary_fixed
+  readonly property color buttonHoveredTextColor: Colors.on_tertiary_fixed
   readonly property color buttonDisabledColor: Colors.outline
-  readonly property color buttonDisabledTextColor: Colors.on_secondary
+  readonly property color buttonDisabledTextColor: Colors.on_tertiary
 
   // slider
   readonly property color sliderHandleColor: Colors.tertiary
@@ -39,8 +40,8 @@ Singleton {
 
 
   // contextMenu
-  readonly property color menuSeparator: Colors.outline
-  readonly property color menuItemHover: Colors.outline
+  readonly property color menuSeparator: Colors.outline_variant
+  readonly property color menuItemHover: Colors.outline_variant
   readonly property int menuItemMargin: 4
   readonly property int menuSeparatorHeight: 11
   

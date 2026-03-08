@@ -82,6 +82,8 @@ PopupPanelWindow {
 					horizontalAlignment: Text.AlignHCenter
 					verticalAlignment: Text.AlignVCenter
 
+					color: Theme.highlightText
+
 					required property string shortName
 				}
 			}
