@@ -19,5 +19,7 @@ RowLayout {
 	SystemTray {
 		screen: root.screen
 	}
-	Clock {}
+	Clock {
+		screen: root.screen
+	}
 }
