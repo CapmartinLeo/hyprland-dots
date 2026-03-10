@@ -83,12 +83,14 @@ ColumnLayout {
 
 	Item {
 		id: subMenu
-		implicitWidth: subMenuLoader.implicitWidth
-		clip: true
 
+		Layout.fillWidth: true
+		Layout.preferredWidth: subMenuLoader.implicitWidth
 		Layout.preferredHeight: root.subMenuOpened && subMenuLoader.item
 		? subMenuLoader.item.implicitHeight
 		: 0
+
+		clip: true
 
 		Behavior on Layout.preferredHeight {
 			NumberAnimation {
@@ -99,10 +101,12 @@ ColumnLayout {
 
 		Loader {
 			id: subMenuLoader
+			anchors.fill: parent
 			active: root.hasChildren && root.subMenuOpened
 			source: "ItemList.qml"
 			onLoaded: {
 				item.menu = root.trayItem
+				item.isSubMenu = true
 			}
 		}
 	}

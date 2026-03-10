@@ -9,9 +9,12 @@ import "../../Style"
 
 ColumnLayout {
 	id: root
-	spacing: 0
-
 	property QsMenuHandle menu
+	property bool isSubMenu: false
+
+	anchors.fill: isSubMenu ? parent : null
+
+	spacing: 0
 
 	signal menuShouldClose()
 
