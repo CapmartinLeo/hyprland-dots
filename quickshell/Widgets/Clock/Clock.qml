@@ -1,4 +1,7 @@
+import QtQuick.Layouts
 import Quickshell
+
+import "../../Style"
 import "../../Components"
 
 WidgetWrapper {
@@ -10,9 +13,11 @@ WidgetWrapper {
 
 	}
 
-	FontText {
-		text: Time.time
-	}
+	RowLayout {
+		spacing: Theme.itemSpacing
+		FontText { text: "" }
+		FontText { text: Time.time }
+	}	
 
 	CalendarWindow {
 		id: calendar
