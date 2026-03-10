@@ -13,8 +13,8 @@ ColumnLayout {
 
 	required property QsMenuEntry trayItem
 
+	property bool hasChildren: trayItem?.hasChildren || false
 	property bool subMenuOpened: false
-	property bool subMenuLoaded: false
 
 	signal menuShouldClose();
 
@@ -36,7 +36,7 @@ ColumnLayout {
 			hoverEnabled: true
 
 			onClicked: {
-				if (root.trayItem.hasChildren) {
+				if (root.hasChildren) {
 					root.subMenuOpened = !root.subMenuOpened
 
 				} else {
@@ -61,7 +61,7 @@ ColumnLayout {
 			spacing: Theme.itemSpacing
 
 			IconImage {
-				source: root.trayItem.icon
+				source: root.trayItem?.icon || ""
 				implicitSize: text.implicitHeight
 			}
 
@@ -72,7 +72,7 @@ ColumnLayout {
 			}
 
 			FontText {
-				property string endIcon: root.trayItem.hasChildren
+				property string endIcon: root.hasChildren
 				? (root.subMenuOpened ? "" : "")
 				: " "
 				text: endIcon
@@ -99,7 +99,7 @@ ColumnLayout {
 
 		Loader {
 			id: subMenuLoader
-			active: root.trayItem.hasChildren && root.subMenuOpened
+			active: root.hasChildren && root.subMenuOpened
 			source: "ItemList.qml"
 			onLoaded: {
 				item.menu = root.trayItem

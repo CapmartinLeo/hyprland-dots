@@ -24,7 +24,7 @@ WidgetWrapper {
 			IconImage {
 				id: item
 				required property SystemTrayItem modelData
-				source: modelData.icon
+				source: modelData?.icon || ""
 				implicitSize: 18
 
 				TrayMenu {
@@ -32,7 +32,7 @@ WidgetWrapper {
 					screen: root.screen
 					spawner: item
 					
-					handle: item.modelData.menu
+					handle: item.modelData?.menu || null
 				}
 
 				MouseArea {
