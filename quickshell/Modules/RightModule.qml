@@ -6,6 +6,7 @@ import "../Style"
 import "../Widgets/SystemTray"
 import "../Widgets/KBLayout"
 import "../Widgets/Clock"
+import "../Widgets/Settings"
 
 RowLayout {
 	id: root
@@ -17,11 +18,9 @@ RowLayout {
 	anchors.right: parent.right
 	spacing: Theme.barSpacing
 
-	SystemTray {
-		screen: root.screen
-	}
+	SystemTray { screen: root.screen }
 	KBLayout {}
-	Clock {
-		screen: root.screen
-	}
+	Clock { screen: root.screen }
+	Settings { screen: root.screen }
+
 }
