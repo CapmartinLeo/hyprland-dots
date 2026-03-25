@@ -44,7 +44,7 @@ PACKAGES=(
 	waypaper
 	rofi-wayland
 	rofi-calc
-	swww
+	awww
 	libnotify
 	hypridle
 	hyprlock
