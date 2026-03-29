@@ -66,6 +66,7 @@ PACKAGES=(
 
 	# misc apps
 	eog
+	pavucontrol
 	vlc
 	pinta
 	gnome-calculator

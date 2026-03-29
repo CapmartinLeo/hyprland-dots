@@ -681,10 +681,6 @@
       ],
       "right": [
         "volume",
-        "network",
-        "bluetooth",
-        "battery",
-        "systray",
         "kbinput",
         "clock",
         "notifications"
@@ -701,6 +697,10 @@
       ],
       "right": [
         "volume",
+        "network",
+        "bluetooth",
+        "battery",
+        "systray",
         "kbinput",
         "clock",
         "notifications"
